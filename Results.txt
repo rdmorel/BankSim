@@ -1,0 +1,35 @@
+Results of testing:
+
+Average Wait (min)			Final Departure
+6.8					            402
+5.83125			          	408
+6.98125			          	404
+6.35				          	401
+4.36875			          	403
+5.38125			          	420
+4.55					          401
+6.1				             	412
+7.95625			          	435
+4.41875			          	411
+
+Total Average: 5.87375
+
+Classes Modified:
+
+BankSim2.java (note, rather than modifying BankSim.java, I simply copied it and then edited the copy, so it is now BankSim2.java. If you are testing the code, please make sure you change references to BankSim.java to reference BankSim2.java. Thank you!)
+
+Modified all methods besides printList(). See BankSim2.java for details.
+
+Event.java
+
+Modified getWhichQ() - uncommented it
+
+Modified setWhichQ() - uncommented it and changed it from q being either 0 or 1 to q being either 1 or 2.
+
+RunBankSimRandom.java
+
+Modified main() - set “to generate a random collection of 160 customers with start times randomly chosen between 1 and 400 and durations randomly chosen between 2 and 8 time units,” as instructed. (And fixed it to reference BankSim2.java, instead of BankSim.java.
+
+Departure.java
+
+Modified the constructor to include “	this.whichQ = arr.getWhichQ();” which uses the variable whichQ from the Event.java class.
