@@ -1,0 +1,25 @@
+// adapted from Carrano & Prichard, and Weiss
+import java.util.*; // for Random
+
+public class RunBankSimRandom {
+    public static final int NUM_ARRIVALS = 160;
+    public static Random r = new Random();   // to generate random numbers using r.nextInt(upper_limit)
+    
+    public static void main(String[] args) {
+        BankSim2 theBSim = new BankSim2();
+        
+        Arrival[] inputData = new Arrival[NUM_ARRIVALS];  // arrivals at bank and transaction times
+        for (int i=0; i<NUM_ARRIVALS; i++) 
+            // generate Event with arrival time between 0 and 3*NUM_ARRIVALS-1,
+            // and duration between 1 and 5; try also 6 or 7 as longest transaction
+            inputData[i] = new Arrival(r.nextInt(399)+1, r.nextInt(6)+2);
+        Arrays.sort(inputData);
+        
+//        System.out.println("The starting data:");
+//        for (int i=0; i<NUM_ARRIVALS; i++)
+//            System.out.println(inputData[i]);
+        
+        System.out.println("\n\nThe simulation:");
+        theBSim.simulate(inputData, NUM_ARRIVALS);
+    }
+}
